@@ -2,8 +2,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mvvm_example/config/themes/color.dart';
 import 'package:mvvm_example/config/themes/size_calculator.dart';
 import 'package:mvvm_example/view-model/app_homepage_view_model.dart';
@@ -24,9 +23,13 @@ class _AppHomepageState extends State<AppHomepage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColors.greenColor,
-        leading: Icon(
-          Icons.square_outlined,
-          color: AppColors.secondaryPurpleColor,
+        leading: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Image.asset(
+            "asset/images/counter.png",
+            color: AppColors.white,
+            width: sizer(true, 15, context),
+          ),
         ),
         title: Text(
           homePageData.appTitle,
