@@ -16,7 +16,6 @@ class AppHomePageViewModel {
 
   // increase the counter value
   increaseCounter() {
-    
     return counterModel.counter++;
   }
 

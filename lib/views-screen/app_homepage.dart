@@ -18,6 +18,20 @@ class _AppHomepageState extends State<AppHomepage> {
   // NB: creating an instance of the App homepage ViewModel
   var homePageData = AppHomePageViewModel();
 
+  // Increase counter
+  counterIncrement() {
+    setState(() {
+      homePageData.increaseCounter();
+    });
+  }
+
+  // Decrease counter
+  counterDecrement() {
+    setState(() {
+      homePageData.decreaseCounter();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,9 +97,7 @@ class _AppHomepageState extends State<AppHomepage> {
                             Border.all(width: 1.5, color: AppColors.greyColor)),
                     child: IconButton(
                         onPressed: () {
-                          setState(() {
-                            homePageData.decreaseCounter();
-                          });
+                          counterDecrement();
                         },
                         icon: const Icon(
                           Icons.remove_sharp,
@@ -103,10 +115,7 @@ class _AppHomepageState extends State<AppHomepage> {
                             Border.all(width: 1.5, color: AppColors.greyColor)),
                     child: IconButton(
                         onPressed: () {
-                          setState(() {
-                            homePageData.increaseCounter();
-                          });
-                          
+                          counterIncrement();
                         },
                         icon: const Icon(
                           Icons.add_sharp,
